@@ -1,0 +1,135 @@
+:root {
+  --background: #ffffff;
+  --foreground: #273D54;
+  
+  --primary: #1B5780;
+  --primary-glow: rgba(27, 87, 128, 0.3);
+  --secondary: #4EB5D0;
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(27, 87, 128, 0.1);
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+/* Base generic classes */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  color: #4b5563;
+  margin-bottom: 4rem;
+  max-width: 600px;
+}
+
+/* Base button resets for all components */
+.btn-reset {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* === PPT-STYLE SCROLL SNAP === */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* Hide scrollbar for a clean presentation look */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each slide/section — transparent so canvas grid shows through */
+.slide {
+  min-height: 100dvh;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  scroll-snap-stop: always;
+  background: transparent;      /* Let the fixed canvas background show through */
+  z-index: 1;                   /* Content stays above the canvas (z-index: 0) */
+}
+
+/* Ensure inner sections stretch fully */
+.slide > section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

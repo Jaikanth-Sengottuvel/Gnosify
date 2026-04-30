@@ -1,0 +1,84 @@
+.dotsContainer {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 9999;
+}
+
+.dotWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  group: hover;
+}
+
+.label {
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  background: var(--glass-bg);
+  padding: 0.2rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.dotWrapper:hover .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(27, 87, 128, 0.2);
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dotWrapper:hover .dot {
+  background-color: var(--primary);
+  transform: scale(1.2);
+}
+
+.active .dot {
+  background-color: transparent;
+  border-color: var(--primary);
+  transform: scale(1.4);
+}
+
+/* Add a glowing inner dot for active state */
+.active .dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+@media (max-width: 768px) {
+  .dotsContainer {
+    right: 1rem;
+    gap: 1rem;
+  }
+  .label {
+    display: none;
+  }
+}

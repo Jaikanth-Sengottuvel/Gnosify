@@ -1,0 +1,83 @@
+/* === PURE TEXT ANIMATIONS (Responsive, Slide-from-Bottom Illusion) === */
+
+/* Base Hidden State */
+.anim-fade-slide, 
+.anim-scale-pop, 
+.anim-blur-reveal, 
+.anim-clip-wipe, 
+.anim-split-burst, 
+.anim-parallax-lift {
+  opacity: 0;
+  will-change: opacity, transform, filter, clip-path;
+}
+
+/* 1. Fade + Slide-Up (Enhanced Base) */
+.anim-fade-slide {
+  transform: translateY(40px);
+}
+.anim-fade-slide.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 800ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* 2. Scale + Fade Pop (Gentle overshoot) */
+.anim-scale-pop {
+  transform: scale(0.95) translateY(20px);
+}
+.anim-scale-pop.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 3. Blur + Reveal (Soft cinematic entrance) */
+.anim-blur-reveal {
+  filter: blur(8px);
+  transform: translateY(30px);
+}
+.anim-blur-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 900ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* 4. Clip-Path Wipe (Sharp digital wipe) */
+.anim-clip-wipe {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transform: translateY(20px);
+}
+.anim-clip-wipe.is-visible {
+  opacity: 1;
+  clip-path: polygon(0 -20%, 100% -20%, 100% 120%, 0 120%);
+  transform: translateY(0);
+  transition: clip-path 800ms cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 800ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 800ms ease;
+}
+
+/* 5. Parallax Text Lift (3D space lift) */
+.anim-parallax-lift {
+  transform: translateY(60px) rotateX(25deg);
+  transform-origin: bottom center;
+}
+.anim-parallax-lift.is-visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+  transition: all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Stagger DELAY Utilities */
+.anim-delay-1 { transition-delay: 100ms !important; }
+.anim-delay-2 { transition-delay: 200ms !important; }
+.anim-delay-3 { transition-delay: 300ms !important; }
+.anim-delay-4 { transition-delay: 400ms !important; }
+.anim-delay-5 { transition-delay: 500ms !important; }
+
+/* Mobile Optimization: Faster, lighter transforms */
+@media (max-width: 768px) {
+  .anim-fade-slide, .anim-blur-reveal, .anim-parallax-lift, .anim-scale-pop {
+     transform: translateY(20px);
+  }
+}

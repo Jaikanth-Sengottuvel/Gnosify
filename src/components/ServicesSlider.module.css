@@ -1,0 +1,98 @@
+.sliderSection {
+  padding: 8rem 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.scrollWrapper {
+  overflow-x: auto;
+  padding: 2rem 5%;
+  cursor: grab;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.scrollWrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  padding-right: 5%;
+}
+
+.card {
+  width: 320px;
+  height: 260px; /* Slightly increased height for better spacing */
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--secondary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cardNumber {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 280px;
+    height: 220px;
+    padding: 2rem;
+  }
+}

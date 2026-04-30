@@ -1,0 +1,78 @@
+.waterButton {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  background: var(--primary);
+  color: #fff;
+  transition: all 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 4px 15px var(--primary-glow);
+  cursor: pointer;
+}
+
+.waterButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--secondary), var(--primary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.waterButton:hover::before {
+  opacity: 1;
+}
+
+.waterButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 181, 208, 0.4);
+}
+
+.waterButton:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: 0 2px 10px rgba(27, 87, 128, 0.4);
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  box-shadow: none;
+}
+
+.secondary::before {
+  background: var(--primary);
+}
+
+.secondary:hover {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 25px var(--primary-glow);
+}

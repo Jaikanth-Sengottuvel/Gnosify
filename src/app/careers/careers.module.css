@@ -1,0 +1,494 @@
+.hero {
+  padding: 180px 0 100px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--primary-glow);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  border: 1px solid var(--glass-border);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-bottom: 24px;
+}
+
+.heroSub {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(27, 87, 128, 0.2);
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: var(--primary);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 700;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  background: rgba(27, 87, 128, 0.05);
+}
+
+/* 2. Why Join Us */
+.perksSection {
+  padding: 80px 0;
+}
+
+.centredHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centredHeader h2,
+.centredHeader p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.perksGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.perkCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 40px 32px;
+  border-radius: 24px;
+  transition: all 0.4s ease;
+}
+
+.perkCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--secondary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.perkIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--primary-glow);
+  color: var(--primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.perkCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--foreground);
+}
+
+.perkCard p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* 3. Culture Section */
+.cultureSection {
+  padding: 80px 0;
+}
+
+.cultureCard {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: var(--foreground);
+  border-radius: 32px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.cultureContent {
+  padding: 60px;
+}
+
+.cultureList {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cultureItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.checkIcon {
+  width: 28px;
+  height: 28px;
+  background: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cultureVisual {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.visualBadge {
+  background: #fff;
+  color: var(--primary);
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Open Positions */
+.openingsSection {
+  padding: 100px 0;
+}
+
+.openingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.jobCard {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 24px;
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.jobCard:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.jobMain {
+  flex: 1;
+}
+
+.jobHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.jobTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+}
+
+.jobMeta {
+  display: flex;
+  gap: 16px;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.jobMeta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jobDesc {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.jobSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillTag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.applyBtn {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.applyBtn:hover {
+  background: var(--foreground);
+  transform: translateX(4px);
+}
+
+/* 5. Process Section */
+.processSection {
+  padding: 100px 0;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.processStep {
+  position: relative;
+}
+
+.stepIconBox {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-glow);
+  color: var(--primary);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.stepConnector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: calc(32px + 100%);
+  height: 2px;
+  background: var(--glass-border);
+  z-index: -1;
+}
+
+.stepContent .stepNumber {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.stepContent h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.stepContent p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* 6. Open Application */
+.openApplicationSection {
+  padding: 100px 0;
+}
+
+.openApplicationCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 60px;
+  border-radius: 32px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mailIconBox {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.oaContent h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.oaContent p {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.openBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* 7. Final CTA */
+.ctaSection {
+  padding: 100px 0 140px;
+}
+
+.ctaCard {
+  background: var(--foreground);
+  padding: 80px;
+  border-radius: 32px;
+  text-align: center;
+  color: #fff;
+}
+
+.ctaCard h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.ctaCard p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.ctaBtns .primaryBtn {
+  background: #fff;
+  color: var(--primary);
+}
+
+@media (max-width: 1200px) {
+  .perksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .processGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .stepConnector { display: none; }
+}
+
+@media (max-width: 1024px) {
+  .cultureCard { grid-template-columns: 1fr; }
+  .cultureVisual { height: 200px; border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
+  .jobCard { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .jobHeader { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .openApplicationCard { flex-direction: column; text-align: center; padding: 40px; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 140px 0 60px; }
+  .perksGrid, .processGrid { grid-template-columns: 1fr; }
+  .ctaBtns { flex-direction: column; }
+  .heroBtns { flex-direction: column; }
+  .jobCard { padding: 32px 24px; }
+}

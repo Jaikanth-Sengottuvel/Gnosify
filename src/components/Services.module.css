@@ -1,0 +1,140 @@
+.servicesSection {
+  position: relative;
+}
+
+.intro {
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding: 2.5rem 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(27, 87, 128, 0.1);
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+/* Top accent line */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 50px rgba(27, 87, 128, 0.1);
+  border-color: rgba(27, 87, 128, 0.2);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Large background number */
+.cardNumber {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.75rem;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(27, 87, 128, 0.06);
+  letter-spacing: -0.04em;
+  user-select: none;
+  transition: color 0.4s ease;
+}
+
+.card:hover .cardNumber {
+  color: rgba(27, 87, 128, 0.1);
+}
+
+/* Icon area — open, no background box */
+.iconWrapper {
+  color: var(--primary);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover .iconWrapper {
+  color: var(--secondary);
+  transform: scale(1.08) translateY(-4px);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--foreground);
+  margin-bottom: 0.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.card p {
+  color: #6b7280;
+  line-height: 1.75;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.readMore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.readMore:hover {
+  gap: 12px;
+  color: var(--secondary);
+}
