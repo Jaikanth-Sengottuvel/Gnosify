@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import InteractiveGrid from "@/components/InteractiveGrid";
@@ -13,6 +12,13 @@ import Footer from "@/components/Footer";
 import NavigationDots from "@/components/NavigationDots";
 import StatsBar from "@/components/StatsBar";
 import PortfolioPreview from "@/components/PortfolioPreview";
+
+export const metadata: Metadata = {
+  title: "Gnosify | AI-First Digital Solutions for Growing Businesses",
+  description:
+    "Gnosify builds high-performance websites, AI automation, mobile apps, and digital marketing solutions that help businesses grow faster. Get a free consultation today.",
+  alternates: { canonical: "https://gnosify.in" },
+};
 
 export default function Home() {
   return (
@@ -33,4 +39,3 @@ export default function Home() {
     </main>
   );
 }
-// trigger rebuild

@@ -61,7 +61,7 @@ export default function CTA() {
           <div className={styles.grid}>
             {/* Left Info Side */}
             <div className={styles.infoSide}>
-              <h2>Let’s Build Your Next <span className="gradient-text">Digital Product</span></h2>
+              <h2>Let’s Build Your Next <span className={styles.highlightText}>Digital Product</span></h2>
               <p>Tell us about your idea — we’ll help you design, build, and scale it with the right technology.</p>
               
               <div className={styles.trustLines}>

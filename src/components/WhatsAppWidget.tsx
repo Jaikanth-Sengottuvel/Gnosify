@@ -18,16 +18,21 @@ export default function WhatsAppWidget() {
       alignItems: 'flex-end',
       gap: '0.75rem',
     }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .wa-tooltip { display: none !important; }
+        }
+      `}</style>
       {visible && (
-        <div style={{
+        <div className="wa-tooltip" style={{
           background: '#fff',
-          borderRadius: '14px',
-          padding: '0.9rem 1.1rem 0.9rem 1rem',
-          fontSize: '0.88rem',
+          borderRadius: '10px',
+          padding: '0.6rem 0.8rem',
+          fontSize: '0.8rem',
           color: 'var(--foreground)',
-          boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+          boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
           border: '1px solid rgba(27,87,128,0.08)',
-          maxWidth: '210px',
+          maxWidth: '160px',
           position: 'relative',
         }}>
           <button
@@ -35,8 +40,8 @@ export default function WhatsAppWidget() {
             onClick={() => setVisible(false)}
             style={{
               position: 'absolute',
-              top: '6px',
-              right: '8px',
+              top: '4px',
+              right: '4px',
               background: 'none',
               border: 'none',
               cursor: 'pointer',
@@ -45,12 +50,12 @@ export default function WhatsAppWidget() {
               color: '#aaa',
             }}
           >
-            <X size={13} />
+            <X size={12} />
           </button>
-          <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--primary)', paddingRight: '1rem' }}>
+          <strong style={{ display: 'block', marginBottom: '0.15rem', color: 'var(--primary)', paddingRight: '0.8rem', fontSize: '0.85rem' }}>
             Chat with us!
           </strong>
-          <span style={{ color: '#6b7280', lineHeight: 1.5, display: 'block' }}>
+          <span style={{ color: '#6b7280', lineHeight: 1.3, display: 'block', fontSize: '0.75rem' }}>
             We reply within minutes.
           </span>
         </div>

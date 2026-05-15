@@ -37,19 +37,9 @@ body {
   padding: 0 5%;
 }
 
-.section-padding {
-  padding: 8rem 0;
-}
-
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 5%;
 }
 
 .glass-panel {
@@ -69,7 +59,7 @@ a {
 }
 
 .section-padding {
-  padding: 8rem 0;
+  padding: clamp(4rem, 8vh, 8rem) 0;
 }
 
 .section-title {
@@ -132,4 +122,33 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* ── Global mobile safety net ─────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Prevent any single element from causing horizontal overflow */
+  img, video, iframe, table {
+    max-width: 100%;
+  }
+
+  /* Tighten section-subtitle on small screens so it doesn't overflow */
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Reduce section padding on mobile so content breathes more */
+  .section-padding {
+    padding: clamp(2.5rem, 6vh, 5rem) 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 4%;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
 }

@@ -2,16 +2,25 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { BrainCircuit, Cpu } from 'lucide-react';
 import styles from './Hero.module.css';
 import WaterButton from './WaterButton';
 
 const slides = [
   {
-    title: "Intelligence & Innovation",
-    subtitle: "At Gnosify, we transform complex ideas into scalable digital solutions, leveraging cutting-edge technology to build, grow, and automate your business."
+    title: "Build Smarter. Scale Faster.",
+    subtitle: "Gnosify delivers AI-powered websites, automation, and digital solutions that cut costs, attract customers, and help your business grow — faster than you thought possible."
+  },
+  {
+    title: "Your Digital Growth Partner",
+    subtitle: "From custom web applications to intelligent AI automation, we turn your vision into a high-performance product — built for results, not just aesthetics."
+  },
+  {
+    title: "AI-Driven Digital Innovation",
+    subtitle: "We combine deep technical expertise with an AI-first mindset to build scalable, future-proof solutions for startups and growing businesses across India."
   }
 ];
+
+const GRADIENT_WORDS = ["Smarter.", "Faster.", "Digital", "AI-Driven", "Growth"];
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,12 +51,12 @@ export default function Hero() {
         <div className={styles.blob1}></div>
         <div className={styles.blob2}></div>
       </div>
-      
+
       <div className={`container ${styles.contentContainer}`}>
         <div className={styles.textContent}>
           <div className={styles.sliderContainer}>
             <AnimatePresence mode="wait">
-              <motion.div 
+              <motion.div
                 key={currentSlide}
                 className={styles.slideText}
                 initial="hidden"
@@ -57,9 +66,9 @@ export default function Hero() {
                 <div className={styles.titleWrapper}>
                   <motion.h1 variants={titleVariants}>
                     {slides[currentSlide].title.split(" ").map((word, i) => (
-                      ["Intelligence", "Innovation", "Digital", "Future"].includes(word) ? 
-                      <span key={i} className="gradient-text">{word} </span> : 
-                      <span key={i}>{word} </span>
+                      GRADIENT_WORDS.includes(word)
+                        ? <span key={i} className="gradient-text">{word} </span>
+                        : <span key={i}>{word} </span>
                     ))}
                   </motion.h1>
                 </div>
@@ -70,7 +79,7 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-          <motion.div 
+          <motion.div
             className={styles.buttonGroup}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,15 +91,19 @@ export default function Hero() {
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         className={styles.fullRightImage}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.2 }}
       >
-        <img 
-          src="/hero5.png" 
-          alt="Gnosify IT Consulting Team Standing Discussion" 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero5.png"
+          alt="Gnosify IT Consulting Team"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
       </motion.div>
     </section>

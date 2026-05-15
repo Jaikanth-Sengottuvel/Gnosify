@@ -1,0 +1,8 @@
+node_modules/
+.next/
+public/
+*.ico
+*.woff2
+*.png
+*.jpg
+*.svg

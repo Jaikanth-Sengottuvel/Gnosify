@@ -54,10 +54,10 @@ export default function Footer() {
               An AI-first digital solutions company building innovative, scalable, and high-performance products for businesses worldwide.
             </p>
             <div className={styles.socials}>
-              <a href="#" aria-label="LinkedIn"  className={styles.social}><LinkedinIcon /></a>
-              <a href="#" aria-label="X"         className={styles.social}><XIcon /></a>
-              <a href="#" aria-label="Instagram" className={styles.social}><InstagramIcon /></a>
-              <a href="#" aria-label="Facebook"  className={styles.social}><FacebookIcon /></a>
+              <a href="https://linkedin.com/company/gnosify" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"  className={styles.social}><LinkedinIcon /></a>
+              <a href="https://twitter.com/gnosify"           target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" className={styles.social}><XIcon /></a>
+              <a href="https://instagram.com/gnosify"         target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.social}><InstagramIcon /></a>
+              <a href="https://facebook.com/gnosify"          target="_blank" rel="noopener noreferrer" aria-label="Facebook"  className={styles.social}><FacebookIcon /></a>
             </div>
           </div>
 

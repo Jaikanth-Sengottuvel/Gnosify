@@ -75,10 +75,6 @@
 
 @media (max-width: 768px) {
   .dotsContainer {
-    right: 1rem;
-    gap: 1rem;
-  }
-  .label {
     display: none;
   }
 }

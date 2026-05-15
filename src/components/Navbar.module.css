@@ -8,6 +8,8 @@
   background: transparent;
   border-bottom: 1px solid transparent;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .scrolled {
@@ -132,12 +134,14 @@
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(27, 87, 128, 0.12);
   border-radius: 10px;
-  width: 42px;
-  height: 42px;
+  /* minimum 44×44 px touch target */
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   color: var(--foreground);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  flex-shrink: 0;
 }
 
 /* Mobile slide-down menu */
@@ -199,4 +203,13 @@
   .hamburger {
     display: flex;
   }
+}
+
+@media (max-width: 375px) {
+  .navbar { padding: 1rem 0; }
+  .scrolled { padding: 0.6rem 0; }
+  .logo { height: 36px; }
+  /* Ensure mobile menu links are easy to tap */
+  .mobileLink { padding: 0.9rem 1rem; min-height: 44px; display: flex; align-items: center; }
+  .mobileCta { padding: 1rem; min-height: 44px; }
 }

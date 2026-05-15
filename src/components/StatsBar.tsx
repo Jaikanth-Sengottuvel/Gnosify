@@ -1,16 +1,36 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './StatsBar.module.css';
 
 function CountUp({ end, suffix = '' }: { end: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
+  const [started, setStarted] = useState(false);
   const [count, setCount] = useState(0);
 
+  // Use native IntersectionObserver with the custom scroll-container as root.
+  // framer-motion useInView defaults to the browser viewport, which never fires
+  // when the page uses a custom overflow-y scroll container.
   useEffect(() => {
-    if (!inView) return;
+    const el = ref.current;
+    if (!el) return;
+    const root = document.querySelector('.scroll-container') as Element | null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      { root, threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
     let current = 0;
     const steps = 60;
     const increment = end / steps;
@@ -25,7 +45,7 @@ function CountUp({ end, suffix = '' }: { end: number; suffix: string }) {
       }
     }, interval);
     return () => clearInterval(timer);
-  }, [inView, end]);
+  }, [started, end]);
 
   return <span ref={ref}>{count}{suffix}</span>;
 }

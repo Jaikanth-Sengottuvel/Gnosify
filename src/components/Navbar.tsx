@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
@@ -16,27 +16,27 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Ref avoids stale closure on every scroll event
+  const lastScrollYRef = useRef(0);
+
+  const handleScroll = useCallback((e: Event) => {
+    const currentScrollY = (e.target as Element).scrollTop ?? window.scrollY;
+    setScrolled(currentScrollY > 50);
+    if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
+      setHidden(true);
+    } else if (currentScrollY < lastScrollYRef.current) {
+      setHidden(false);
+    }
+    lastScrollYRef.current = currentScrollY;
+  }, []);
 
   useEffect(() => {
     const scrollContainer = document.querySelector('.scroll-container') || window;
-
-    const handleScroll = (e: any) => {
-      const currentScrollY = e.target.scrollTop ?? window.scrollY;
-      setScrolled(currentScrollY > 50);
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setHidden(true);
-      } else if (currentScrollY < lastScrollY) {
-        setHidden(false);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
     return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   return (
     <>

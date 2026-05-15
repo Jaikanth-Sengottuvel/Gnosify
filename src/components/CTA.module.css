@@ -278,10 +278,14 @@
   gap: 0.5rem;
 }
 
+.highlightText {
+  color: var(--secondary);
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
   .infoSide {
     text-align: center;
@@ -291,18 +295,65 @@
     margin-right: auto;
   }
   .trustLines {
-    align-items: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
   }
   .contactDetails {
-    align-items: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
   }
   .content {
-    padding: 4rem 2rem;
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
   }
 }
 
 @media (max-width: 640px) {
+  .ctaSection {
+    padding: 4rem 0 2rem;
+  }
+  .infoSide h2 {
+    font-size: 2.2rem;
+  }
+  .infoSide p {
+    font-size: 1.05rem;
+  }
+  .trustLines {
+    gap: 0.75rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .contactDetails {
+    width: 100%;
+    align-items: flex-start;
+  }
+  .trustItem {
+    font-size: 0.95rem;
+  }
   .formSide {
     padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+  .submitBtn {
+    font-size: 1rem;
+    padding: 1rem;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 375px) {
+  .content {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+  .infoSide h2 {
+    font-size: 1.9rem;
+  }
+  .formSide {
+    padding: 1.5rem 1rem;
   }
 }

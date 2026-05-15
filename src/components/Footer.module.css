@@ -23,8 +23,9 @@
 }
 
 .social {
-  width: 36px;
-  height: 36px;
+  /* minimum 44×44 px touch target for mobile accessibility */
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
@@ -147,6 +148,13 @@
 }
 
 @media (max-width: 576px) {
-  .grid { grid-template-columns: 1fr; }
+  .footer { padding: 3rem 0 2rem; }
+  .grid { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2.5rem; }
   .bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  /* Ensure social icon row stays horizontally centered on mobile */
+  .socials { flex-wrap: wrap; }
+}
+
+@media (max-width: 375px) {
+  .servicesGrid { grid-template-columns: 1fr; }
 }

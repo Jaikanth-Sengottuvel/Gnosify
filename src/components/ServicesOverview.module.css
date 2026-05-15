@@ -163,4 +163,8 @@
   .serviceCard {
     padding: 32px;
   }
+  
+  .serviceCard:hover {
+    transform: translateY(-6px) !important;
+  }
 }
