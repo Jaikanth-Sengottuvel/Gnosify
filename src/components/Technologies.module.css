@@ -69,3 +69,111 @@
 .techItem:hover img {
   transform: scale(1.15) rotate(-5deg);
 }
+
+/* Responsive View Handling */
+.desktopSlider {
+  display: block;
+}
+
+.mobileGrid {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktopSlider {
+    display: none;
+  }
+  
+  .mobileGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 1.25rem;
+  }
+  
+  .tabsContainer {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tabsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tabBtn {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(27, 87, 128, 0.08);
+    color: var(--foreground);
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .tabBtn:active {
+    transform: scale(0.96);
+  }
+  
+  .activeTab {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(27, 87, 128, 0.2);
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 480px;
+    margin-top: 0.5rem;
+  }
+  
+  .mobileTechItem {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(27, 87, 128, 0.08);
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    font-weight: 600;
+    color: var(--foreground);
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  }
+  
+  .mobileTechName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .tabsContainer {
+    justify-content: center;
+  }
+  
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+  }
+}
+

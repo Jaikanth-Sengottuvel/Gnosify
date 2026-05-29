@@ -77,10 +77,7 @@ const organizationSchema = {
     availableLanguage: "English",
   },
   sameAs: [
-    "https://linkedin.com/company/gnosify",
-    "https://twitter.com/gnosify",
-    "https://instagram.com/gnosify",
-    "https://facebook.com/gnosify",
+    "https://www.linkedin.com/company/gnosify.in/",
   ],
 };
 

@@ -9,23 +9,7 @@ const LinkedinIcon = () => (
     <circle cx="4" cy="4" r="2"/>
   </svg>
 );
-const XIcon = () => (
-  <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-);
-const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-  </svg>
-);
-const FacebookIcon = () => (
-  <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
-    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-  </svg>
-);
+
 import styles from './Footer.module.css';
 
 const serviceLinks = [
@@ -54,10 +38,7 @@ export default function Footer() {
               An AI-first digital solutions company building innovative, scalable, and high-performance products for businesses worldwide.
             </p>
             <div className={styles.socials}>
-              <a href="https://linkedin.com/company/gnosify" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"  className={styles.social}><LinkedinIcon /></a>
-              <a href="https://twitter.com/gnosify"           target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" className={styles.social}><XIcon /></a>
-              <a href="https://instagram.com/gnosify"         target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.social}><InstagramIcon /></a>
-              <a href="https://facebook.com/gnosify"          target="_blank" rel="noopener noreferrer" aria-label="Facebook"  className={styles.social}><FacebookIcon /></a>
+              <a href="https://www.linkedin.com/company/gnosify.in/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"  className={styles.social}><LinkedinIcon /></a>
             </div>
           </div>
 
